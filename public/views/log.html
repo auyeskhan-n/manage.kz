@@ -1,0 +1,18 @@
+<div class="main-add-content-inner">
+  <p class="header-title inner-header inner-header-login">
+    Добро пожаловать в manager.kz
+  </p>
+  <form ng-submit="login()">
+    <label for="input-main" class="label label-main label-modified">Ваша электронная почта</label>
+    <input type="text" name="name" class="input input-main input-modified" value="" placeholder="" ng-model="email" ng-keyup="checkis()">
+    <label for="input-main" class="label label-main label-modified">Ваш пароль</label>
+    <input type="password" name="name" class="input input-main input-modified" value="" placeholder="" ng-model="password"><br>
+    <div class="error-reg-form">
+      <p ng-if="check || email.length==0">Ваш аккаунт еще не подтвержден</p>
+    </div>
+    <div class="inner-form">
+      <button class ="button button-login button-login--left button-login-modified button-login-modified-in-login" type="submit">Войти<i class="icon-check"  ></i></button>
+      <button class ="button button-login button-login--right button-login-modified button-login-modified-in-login"  type="button" ui-sref="reg"><i class="icon-arrow-left"></i>Регистрация</button>
+    </div>
+  </form>
+</div>

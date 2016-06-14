@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+	<title>Заявки</title>
+	<link rel="stylesheet" href="stylesheets/all.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <div ng-controller="NavCtrl">
+    <header class="header header-bordered header-modified" >
+        <a href="#" class="header-title header-title-modified" style="color:rgba(255,255,255,1)">Главная</a>
+        <a ng-click="logout()" class="header-title header-title-modified" style="color:rgba(255,255,255,1);float:right;cursor:pointer" ng-if="isUser">Выйти</a>
+    </header>
+
+    <div class="navigation-bar" ng-if="isAdmin" >
+        <span class="navigation-bar-span">
+                    <a type="button" ui-sref="admin-leads" class="button button-add button-modified" ><i class="icon-briefcase"></i><p style="margin-left:3px;margin-right:3px;">Заявки</p></a>
+                    <a type="button" class="button button-add button-modified" ui-sref="leads-history"><i class="icon-paper" ></i><p style="margin-left:3px;margin-right:3px;">История</p></a>
+        </span>
+        <span class="navigation-bar-span">
+                    <a type="button" ui-sref="statistics" class="button button-add button-modified" ><i class="icon-bar-graph"></i><p style="margin-left:3px; margin-right:3px;">Статистика</p></a>
+                    <a type="button" class="button button-add button-modified" ui-sref="users-list"><i class="icon-head"></i><p style="margin-left:3px;margin-right:3px;">Менеджеры</p></a>
+        </span>
+    </div>
+
+    <div class="navigation-bar"  ng-if="isJust">
+        <span class="navigation-bar-span" style="margin-left:15px">
+                    <a type="button" class="button button-add" ui-sref="manager-add"><i class="icon-plus"></i>
+                      <p style="margin-left:3px;">Создать заявку</p></a>
+        </span>
+        <span class="navigation-bar-span"> 
+                    <a type="button" ui-sref="users-leads" class="button button-add" ><i class="icon-paper"></i><p style="margin-left:3px;">Заявки</p></a>
+                    
+        </span>
+    </div>
+
+    </div>
+	<main ui-view class="main">
+     <!-- Here dynamic part of our site -->
+        
+    </main>
+    <script type="text/javascript" src="javascripts/fusioncharts/fusioncharts.js"></script>
+    <script type="text/javascript" src="javascripts/fusioncharts/fusioncharts.charts.js"></script>
+	<script type="text/javascript" src="javascripts/angular.js"></script>
+    <script type="text/javascript" src="javascripts/angular-messages.js"></script>
+    <script src="javascripts/angular-strap.js"></script>
+    <script src="javascripts/angular-strap.tpl.js"></script>
+	<script type="text/javascript" src="javascripts/angular-ui-router.min.js"></script>
+    <script src="javascripts/socket-io/socket.io.js" charset="utf-8"></script>
+    <script src="javascripts/socket-io/directive.socket.js" charset="utf-8"></script>
+    <script type="text/javascript" src="javascripts/angular-cookies.js" charset="utf-8"></script>
+    <script type="text/javascript" src="javascripts/angular-loader.js"></script>
+    <script type="text/javascript" src="javascripts/angular-sanitize.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+    <script src="javascripts/socket-io/service.socket.js" charset="utf-8"></script>
+    <script type="text/javascript" src="services/factory-auth.js"></script>
+    <script type="text/javascript" src="controllers/controllers.js" charset="utf-8"></script>
+    <script type="text/javascript" src="javascripts/fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+    <script type="text/javascript" src="javascripts/angular-fusioncharts.min.js"></script>
+</body>
+</html>

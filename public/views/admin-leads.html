@@ -1,0 +1,28 @@
+<div class="list-container">
+    <div class="list-header">
+        <p class="list-header-title"> Заявки </p>
+    </div>
+    <div class="list-content">
+        <div class="leads-list-content-wrapper">
+            <div class="list-content-header">
+                <span class="leads-list-content-header-item">Дата<i ng-show="forDate" class="icon-caret-down" ng-click="checkFunctionDownDate()"></i><i ng-show="!forDate" class="icon-caret-up" ng-click="checkFunctionUpDate()"></i></span>
+                <span class="leads-list-content-header-item">Менеджер<i ng-show="forManager" class="icon-caret-down" ng-click="checkFunctionDownManager()"></i><i ng-show="!forManager" class="icon-caret-up" ng-click="checkFunctionUpManager()"></i></span>
+                <span class="leads-list-content-header-item">Категория<i ng-show="forCategory" class="icon-caret-down" ng-click="checkFunctionDownCategory()"></i><i ng-show="!forCategory" class="icon-caret-up" ng-click="checkFunctionUpCategory()"></i></span>
+                <span class="leads-list-content-header-item">Сумма<i ng-show="forCost" class="icon-caret-down" ng-click="checkFunctionDownCost()"></i><i ng-show="!forCost" class="icon-caret-up" ng-click="checkFunctionUpCost()"></i></span>
+                <span class="leads-list-content-header-item">Описание</span>
+                <span class="leads-list-content-header-item"></span>
+            </div>
+            <div class="list-content-header" ng-repeat="lead in leads|orderBy:varForFilter">
+                <span class="leads-list-content-header-item" ng-bind="(lead.date | date:'dd/MM/yyyy')">05/06/2016</span>
+                <span class="leads-list-content-header-item" ng-bind="lead.manager">Auyeskhan Nazarbek</span>
+                <span class="leads-list-content-header-item" ng-bind="lead.category">categ 1</span>
+                <span class="leads-list-content-header-item" ng-bind="lead.cost">150.000 kzt</span>
+                <span class="leads-list-content-header-item" ng-bind="lead.description">Lorem lor sit amet, conser</span>
+                <span class="leads-list-content-header-item">
+                    <a type="button" class="button button-add" ng-click="btnAcceptLead(lead)"><i class="icon-check"></i></a>
+                    <a type="button" class="button button-add" ng-click="btnDeclineLead(lead)"><i class="icon-cross" style="background: rgba(231,76,60,1)"></i></a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

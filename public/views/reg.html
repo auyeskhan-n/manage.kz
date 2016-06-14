@@ -1,0 +1,24 @@
+<div class="main-add-content-inner">
+  <p class="header-title inner-header inner-header-login">
+    Регистрация на нашем сайте!
+  </p>
+  <form class="" ng-submit="signup()">
+    <label for="input-main" class="label label-main label-modified">Ваше имя</label>
+    <input type="text" name="name" class="input input-main input-modified" value="" placeholder="" ng-model="name">
+    <label for="input-main" class="label label-main label-modified">Ваша фамилия</label>
+    <input type="text" name="name" class="input input-main input-modified" value="" placeholder="" ng-model="surname">
+    <label for="input-main" class="label label-main label-modified">Ваша электронная почта</label>
+    <input type="text" name="email" class="input input-main input-modified" value="" placeholder="" ng-model="email" ng-keyup="checkunique()">
+    <label for="input-main" class="label label-main label-modified">Ваш пароль</label>
+    <input type="password" name="name" class="input input-main input-modified" value="" placeholder=""  ng-model="password"><br>
+    <div class="error-reg-form">
+      <p ng-if="check || email.length==0">Клиент с такой же почтой уже существует</p>
+    </div>
+    <div class="inner-form">
+    <button class ="button button-login button-login--left button-login-modified button-login-modified-in-login" type="submit" >Регистрация<i class="icon-check"></i></button>
+      <button class ="button button-login button-login--right button-login-modified button-login-modified-in-login" type="button" ui-sref="log"><i class="icon-arrow-left"></i>Войти</button>
+    </div>
+    </div>
+
+  </form>
+</div>

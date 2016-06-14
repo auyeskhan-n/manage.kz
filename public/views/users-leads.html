@@ -1,0 +1,23 @@
+<div class="list-container">
+    <div class="list-header">
+        <p class="list-header-title"> Мои заявки </p>
+    </div>
+    <div class="list-content">
+        <div class="users-list-content-wrapper">
+            <div class="list-content-header">
+                <span class="leads-list-content-header-item">Дата<i ng-show="forDate" class="icon-caret-down" ng-click="checkFunctionDownDate()"></i><i ng-show="!forDate" class="icon-caret-up" ng-click="checkFunctionUpDate()"></i></span>
+                <span class="leads-list-content-header-item">Сумма<i ng-show="forCost" class="icon-caret-down" ng-click="checkFunctionDownCost()"></i><i ng-show="!forCost" class="icon-caret-up" ng-click="checkFunctionUpCost()"></i></span>
+                <span class="users-leads-list-content-header-item">Описание</span>
+                <span class="users-leads-list-content-header-item">Статус</span>
+            </div>
+            <div class="list-content-header" ng-repeat="lead in leads|orderBy:varForFilter">
+                <span class="users-leads-list-content-header-item" ng-bind="lead.date|date:'dd/MM/yyyy'">05/06/2016</span>
+                <span class="users-leads-list-content-header-item" ng-bind="lead.cost">150.000 kzt</span>
+                <span class="users-leads-list-content-header-item" ng-bind="lead.description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</span>
+                <span class="users-leads-list-content-header-item" ng-if="lead.isChecked && lead.isAccepted">Одобрено</span>
+                <span class="users-leads-list-content-header-item" ng-if="lead.isChecked && !lead.isAccepted">Отклонено</span>
+                <span class="users-leads-list-content-header-item" ng-if="!lead.isChecked">В ожиданий</span> 
+            </div>
+        </div>
+    </div>
+</div>

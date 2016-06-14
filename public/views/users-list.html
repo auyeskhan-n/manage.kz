@@ -1,0 +1,29 @@
+<div class="list-container">
+    <div class="list-header">
+        <p class="list-header-title">Менеджеры</p>
+    </div>
+    <div class="list-content">
+        <div class="users-list-content-wrapper">
+            <div class="list-content-header">
+                <span class="users-list-content-header-item">Email</span>
+                <span class="users-list-content-header-item">Имя</span>
+                <span class="users-list-content-header-item">Статус</span>
+
+            </div>
+            <div class="list-content-header" ng-repeat="user in users">
+                <span class="users-list-content-header-item" ng-bind="user.email" style="text-overflow:ellipsis">kamalkhan.sdu@gmail.com</span>
+                <span class="users-list-content-header-item" ng-bind="user.name +' '+user.surname"></span>
+                <span class="users-list-content-header-item" ng-if="user.isChecked && user.isAccepted">
+                    Одобрено
+                </span>
+                <span class="users-list-content-header-item" ng-if="user.isChecked && !user.isAccepted">
+                    Отклонено
+                </span>
+                <span class="users-list-content-header-item" ng-if="!user.isChecked">
+                    <a type="button" class="button button-add" ng-click="btnAcceptUser(user)"><i class="icon-check"></i></a>
+                    <a type="button" class="button button-add" ng-click="btnDeclineUser(user)"><i class="icon-cross" style="background: rgba(231,76,60,1)"></i></a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
